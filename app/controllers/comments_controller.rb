@@ -1,12 +1,5 @@
 class CommentsController < ApplicationController
-	before_action :set_comment, only: [:show, :edit, :update, :destroy]
-
-	def index
-		@comments = Comment.all
-	end
-
-	def show
-	end
+	before_action :set_comment, only: [:edit, :update, :destroy]
 
 	def new
 		@comment = Comment.new
@@ -25,14 +18,13 @@ class CommentsController < ApplicationController
 	end
 
 	def edit
-		#@comment = Comment.find(params[:id])
 		@post = Post.find(params[:id])
 	end
 
 	def update
 		if @comment.update(comment_params)
 			flash[:notice] = "You updated your comment"
-			redirect_to @post
+			redirect_to post_path
 		else
 			flash[:alert] = "There was a problem updating your comment"
 			render :edit

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
-    resources :comments
+    resources :comments, only: [:show, :new, :edit, :update]
   end
 
   resources :sessions, only: [:new, :create]

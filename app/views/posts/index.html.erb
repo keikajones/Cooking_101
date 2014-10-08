@@ -3,7 +3,7 @@
 <ul>
 <% current_user.followeds.each do |user| %>
 	<h2><%= user.fname %></h2>
-	<% user.post.each do |post| %>
+	<% user.posts.each do |post| %>
 		<li><%= post.body %></li>
 	<% end %>
 <% end %>
