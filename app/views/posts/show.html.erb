@@ -1,2 +1,10 @@
 <h1><%= @post.body %></h1>
 <p>by <%= @post.user.fname %>
+
+<p> Comments: </p>
+
+<ul>
+	<% @post.comments.each do |comment| %>
+		<li><%= link_to comment.body, post_comment_path() %></li>
+	<% end %>
+</ul>
