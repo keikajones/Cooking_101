@@ -5,6 +5,6 @@
 
 <ul>
 	<% @post.comments.each do |comment| %>
-		<li><%= link_to comment.body, post_comment_path() %></li>
+		<li><%= link_to comment.body, post_comment_path(:users, :post_comments_path) %></li>
 	<% end %>
 </ul>
