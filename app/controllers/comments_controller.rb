@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
-	before_action :set_comment, only: [:show, :edit, :update, :destroy]
+	before_action :set_comment, only: [:show, :update, :destroy]
 
 	def index
-		@comments = Comments.all
+		@comments = Comment.all
 	end
 
 	def show
@@ -24,6 +24,8 @@ class CommentsController < ApplicationController
 	end
 
 	def edit
+		@post = Post.find params[:post_id]
+		@comment = Comment.new(:post=>@post)
 	end
 
 	def update
@@ -45,7 +47,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:body).merge(user_id: current_user.id)
+		params.require(:comment).permit(:body).merge(comment_id: @post.comment.id)
 	end
 
 	def set_comment
