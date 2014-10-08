@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	before_action :set_comment, only: [:show, :update, :destroy]
+	before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@comments = Comment.all
@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
 
 	def create
 		@comment = Comment.new(comment_params)
+		@comment.post = Comment.find(current_post)
 		if @comment.save
 			flash[:notice] = "Thank you for your comment"
 			redirect_to @post
@@ -24,8 +25,8 @@ class CommentsController < ApplicationController
 	end
 
 	def edit
-		@post = Post.find params[:post_id]
-		@comment = Comment.new(:post=>@post)
+		#@comment = Comment.find(params[:id])
+		@post = Post.find(params[:id])
 	end
 
 	def update
@@ -47,7 +48,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:body).merge(comment_id: @post.comment.id)
+		params.require(:comment).permit(:body)
 	end
 
 	def set_comment
