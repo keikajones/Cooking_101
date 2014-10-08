@@ -3,11 +3,12 @@ class CommentsController < ApplicationController
 
 	def new
 		@comment = Comment.new
+		@post = Post.find(params[:post_id])
 	end
 
 	def create
-		@comment = Comment.new(comment_params)
-		@comment.post = Comment.find(current_post)
+		@post = Post.find(params[:comment][:id])
+		@comment = @post.comment.new(comment_params)
 		if @comment.save
 			flash[:notice] = "Thank you for your comment"
 			redirect_to @post
@@ -19,7 +20,6 @@ class CommentsController < ApplicationController
 
 	def edit
 		@post = Post.find(params[:id])
-
 	end
 
 	def update
