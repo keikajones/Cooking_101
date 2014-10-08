@@ -10,6 +10,6 @@
 
 <ul>
 	<% @post.comments.each do |comment| %>
-		<li><%= comment.body %> by <%= @comment.post.user.fname %>| <%= link_to 'Edit', edit_post_comment_path(@post, comment) %></li>
+		<li><%= comment.body %> by <%= comment.user.fname %> | <%= link_to 'Edit', edit_post_comment_path(@post, comment) %></li>
 	<% end %>
 </ul>
