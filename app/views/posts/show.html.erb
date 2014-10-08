@@ -8,6 +8,7 @@
 
 <p> Comments: </p>
 
+
 <ul>
 	<% @post.comments.each do |comment| %>
 		<li><%= comment.body %> by <%= @comment.post.user.fname %>| <%= link_to 'Edit', edit_post_comment_path(@post, comment) %></li>
