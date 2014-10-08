@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create]
-
+  delete '/logout', to: 'sessions#destroy'
   # You can have the root of your site routed with "root"
   root 'users#index'
 
