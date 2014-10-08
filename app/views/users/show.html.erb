@@ -1,0 +1,40 @@
+<h1><%= @user.fname %>'s Profile</h1>
+<p>Welcome to my profile!</p>
+
+<h3><%= @user.fname %>'s Posts</h3>
+<ol>
+<% @user.posts.each do |post| %>
+	<li><%= link_to post.body, post %></li>
+<% end %>
+</ol>
+
+
+<h3>Following</h3>
+<ul>
+<% @user.followeds.each do |user| %>
+	<li><%= link_to user.fname, user %></li>
+<% end %>
+</ul>
+<hr />
+
+<h3>Following <%= @user.fname %></h3>
+<ul>
+<% @user.followers.each do |user| %>
+	<li><%= link_to user.fname, user %></li>
+<% end %>
+</ul>
+<hr />
+
+
+<% if current_user and @user != current_user %>
+	<% if current_user.followeds.include? @user %>
+		<%= link_to 'unfollow', unfollow_user_path(@user), method: :post %>
+	<% else %>
+		<%= link_to 'follow', follow_user_path(@user),method: :post %>
+	<% end %>
+<% end %>
+
+<p>
+	<%= link_to 'edit user', edit_user_path(@user) %> | 
+	<%= link_to 'back to users', users_path %>
+</p>
