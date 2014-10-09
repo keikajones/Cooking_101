@@ -94,12 +94,12 @@ li a{
 }
 
 .profile_sections{
-	height: 250px;
+	height: auto;
 	margin-left: 20px;
 }
 
 .profile_footer{
-
+	margin-top: 50px;
 }
 
 
