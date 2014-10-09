@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800);
+
+*{
+	font-family: 'Open Sans';
+}
+
 nav {
 	text-align:right;
 	color:#000;
@@ -24,12 +30,76 @@ nav a:hover {
 	max-height: 200px;
 	max-width: 200px;
 	border-radius: 10px;
-	margin-left: 20px;
+	margin-left: 50px;
 	float: left;
 }
 
 .profile_bio{
 	float: left;
 	display: inline-block;
-	position: relative;
+	margin-left: 30px;	
 }
+
+.profile_nav{
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	margin-top: 30px;
+}
+
+.profile_nav ul{
+	margin-left: 50%;
+}
+
+.profile_nav ul li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 100px;
+}
+
+.profile_nav ul li a{
+	text-decoration: none;
+	color: #000;
+}
+
+.user_posts{
+
+}
+
+.user_following{
+	display: none;
+}
+
+.user_followers{
+	display:none;
+}
+
+.profile_sections{
+	height: 250px;
+	margin-left: 20px;
+}
+
+.profile_footer{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

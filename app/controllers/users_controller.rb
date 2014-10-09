@@ -29,10 +29,12 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		@post = Post.new
 	end
 
 	def new
 		@user = User.new
+		@post = Post.new
 	end
 
 	def create
@@ -43,6 +45,16 @@ class UsersController < ApplicationController
 			redirect_to @user
 		else
 			flash[:alert] = "Could not create an account."
+			render :new
+		end
+
+		@post = Post.new(post_params)
+		#@post.user = User.find(session[:user_id])
+		if @post.save
+			flash[:notice] = "New post!"
+			redirect_to @post
+		else
+			flash[:notice] = "Could not create post"
 			render :new
 		end
 	end

@@ -3,52 +3,118 @@
 	<%= stylesheet_link_tag "main.css" %>
 </head>
 
-<header class="profile_header">
-	<img id="profile_img" src="/images/profile_pic.png" alt="profile_pic"/>
-	<div class="profile_bio">
-		<h1>Chef <%= @user.fname + " " + @user.lname %></h1>
-		<p class="chef_level"></p>
+<body>
+
+	<header class="profile_header">
+		<img id="profile_img" src="/images/profile_pic.png" alt="profile_pic"/>
+		<div class="profile_bio">
+			<h1>Chef <%= @user.fname + " " + @user.lname %></h1>
+			<p class="chef_level">Level: <%= @user.level %></p>
+		</div>
+	</header>
+
+	<br clear="both"/>
+
+	<section class="profile_nav">
+		<ul>
+			<li><a id="user_posts" href="#">Posts</a></li>
+			<li><a id="user_following" href="#">Following</a></li>
+			<li><a id="user_followers" href="#">Followers</a></li>
+		</ul>
+	</section>
+	
+	<div class="profile_sections">
+		<section class="user_posts">
+			<h3><%= @user.fname %>'s Posts</h3>
+			<p>Write a New Post:</p>
+			<%= form_for @post do |f| %>
+				<%=f.text_area :body %><br />
+				<%=f.label :tag %>
+				<%=f.select(:tag, options_for_select([['Salad', 1],['Soup', 2],['Seafood', 3],['Meat/Poultry', 4],['Dessert', 5]])) %><br />
+				<%=f.submit 'Post'%>
+			<% end %>
+			<ol>
+				<% @user.posts.each do |post| %>
+					<li><%= link_to post.body, post %></li>
+				<% end %>
+			</ol>
+		</section>
+
+		<section class="user_following">
+			<h3>Following</h3>
+			<ul>
+				<% @user.followeds.each do |user| %>
+					<li><%= link_to user.fname, user %></li>
+				<% end %>
+			</ul>
+		</section>
+
+		<section class="user_followers">
+			<h3>Followers</h3>
+			<ul>
+				<% @user.followers.each do |user| %>
+					<li><%= link_to user.fname, user %></li>
+				<% end %>
+			</ul>
+		</section>
 	</div>
-</header>
 
-<section>
-
-<h3><%= @user.fname %>'s Posts</h3>
-<ol>
-<% @user.posts.each do |post| %>
-	<li><%= link_to post.body, post %></li>
-<% end %>
-</ol>
-
-</section>
-
-
-<h3>Following</h3>
-<ul>
-<% @user.followeds.each do |user| %>
-	<li><%= link_to user.fname, user %></li>
-<% end %>
-</ul>
-<hr />
-
-<h3>Following <%= @user.fname %></h3>
-<ul>
-<% @user.followers.each do |user| %>
-	<li><%= link_to user.fname, user %></li>
-<% end %>
-</ul>
-<hr />
-
-
-<% if current_user and @user != current_user %>
-	<% if current_user.followeds.include? @user %>
-		<%= link_to 'unfollow', unfollow_user_path(@user), method: :post %>
-	<% else %>
-		<%= link_to 'follow', follow_user_path(@user),method: :post %>
+	<% if current_user and @user != current_user %>
+		<% if current_user.followeds.include? @user %>
+			<p><%= link_to 'unfollow', unfollow_user_path(@user), method: :post %></p>
+		<% else %>
+			<p><%= link_to 'follow', follow_user_path(@user),method: :post %></p>
+		<% end %>
 	<% end %>
-<% end %>
 
-<p>
-	<%= link_to 'edit user', edit_user_path(@user) %> | 
-	<%= link_to 'back to users', users_path %>
-</p>
+	<footer class="profile_footer">
+		<p>
+			<%= link_to 'edit user', edit_user_path(@user) %> | 
+			<%= link_to 'back to users', users_path %>
+		</p>
+	</footer>
+
+</body>
+
+<script>
+
+$(document).ready(function(){
+	$("#user_posts").click(function(){
+		$(".user_posts").show();
+		$(".user_following").hide();
+		$(".user_followers").hide();
+	});
+	$("#user_following").click(function(){
+		$(".user_following").show();
+		$(".user_posts").hide();
+		$(".user_followers").hide();
+	});
+	$("#user_followers").click(function(){
+		$(".user_followers").show();
+		$(".user_posts").hide();
+		$(".user_following").hide();
+	});
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

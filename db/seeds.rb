@@ -6,11 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User1 = User.create(fname: "Keika", lname: "Jones", email: "keika.jones@gmail.com", password: "keika")
-User2 = User.create(fname: "Darlene", lname: "Portades", email: "darlene.portades@gmail.com", password: "darlene")
-User3 = User.create(fname: "Jamie", lname: "Christian", email: "jamie.christian@gmail.com", password: "jamie")
-User4 = User.create(fname: "Brian", lname: "Fountain", email: "brian.fountain@gmail.com", password: "brian")
-User5 = User.create(fname: "Zach", lname: "Feldman", email: "zach.feldman@gmail.com", password: "zach")
+User1 = User.create(fname: "Keika", lname: "Jones", email: "keika.jones@gmail.com", password: "keika", level: "Sous Chef")
+User2 = User.create(fname: "Darlene", lname: "Portades", email: "darlene.portades@gmail.com", password: "darlene", level: "Line Cook")
+User3 = User.create(fname: "Jamie", lname: "Christian", email: "jamie.christian@gmail.com", password: "jamie", level: "Line Cook")
+User4 = User.create(fname: "Brian", lname: "Fountain", email: "brian.fountain@gmail.com", password: "brian", level: "Executive Chef")
+User5 = User.create(fname: "Zach", lname: "Feldman", email: "zach.feldman@gmail.com", password: "zach", level: "Sous Chef")
 
 Post1 = Post.create(body: "Hello world", user_id: 1)
 Post2 = Post.create(body: "Awesome!", user_id: 2)
