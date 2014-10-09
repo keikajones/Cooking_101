@@ -1,0 +1,52 @@
+<h1>Desserts</h1>
+<head>
+<script src="//unslider.com/unslider.min.js"></script>
+
+
+<%= stylesheet_link_tag "slider.css" %>
+
+
+<script>
+$(function() {
+    $('.banner').unslider({
+
+        speed: 500,
+        delay: 2000,
+        fluid: true,
+        dots: true,
+        pause: true
+
+
+    });
+});
+</script>
+</head>
+
+<section id="banner-container">
+    <div class="banner">
+        <ul>
+           <li style="background: url(../images/dessert_tomato-cake-750x350.jpg)">
+            <h1>Desserts</h1>
+            <p></p>
+           </li>
+            <li style="background: url(../images/dessert_tomato-cake-750x350.jpg) ">
+            <h1>Desserts</h1>
+            <p></p>
+            </li>
+           <li style="background:url(../images/dessert_tomato-cake-750x350.jpg)">
+            <h1>Desserts</h1>
+            <p></p>
+           </li>   
+        </ul>
+    </div>
+</section>
+
+
+<ul>
+<% current_user.followeds.each do |user| %>
+	<h2><%= user.fname %></h2>
+	<% user.posts.each do |post| %>
+		<li><%= post.body %></li>
+	<% end %>
+<% end %>
+</ul>

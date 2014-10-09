@@ -1,9 +1,14 @@
 * {
-	width:100%;
 	margin:0 auto;
+  left:0;
+  top:0;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800);
+
+ul li {
+  list-style-type: none;
+}
 
 h1 {
 	font-family: 'Open Sans', sans-serif;
@@ -11,80 +16,40 @@ h1 {
 	text-align: right;
 }
 
-ul.img-list {
-  list-style-type: none;
-  text-align: center;
-}
- 
-ul.img-list li {
-  display: inline-block;
-/*  height: 150px;*/
-  margin: 0 1em 1em 0;
-  position: relative;
-  width: 100%;
+.food {
+  width:95%;
 }
 
+.food-images {
+  width:95%;
+  position:relative;
+  padding: 0;
+  width:95%;
+  display:block;
 
-.text-content {
-  background: rgba(0,0,0,0.6);
-  font-size: 2em;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left:0;
-  width: 100%;
 }
- 
-.text-content span {
-  display: table-cell;
-  text-align: center;
+
+.text_over {
+  position:absolute;
+  top:0;
+  color:#fff;
+  background:rgba(0,0,0,0.6);
+  height:99%;
+  width:95%;
+  text-align:center;
   vertical-align: middle;
+  top:0;
+  left:0;
+  z-index:10;
+  opacity:0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 4em;
+  font-weight:400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.text-content {
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 2em;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-  cursor: pointer;
-  display: table;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left:0;
-  width: 100%;
-  opacity: 0;
-}
- 
-ul.img-list li:hover span.text-content {
-  opacity: 1;
+.text_over:hover{
+  opacity:1;
 }
 
-.text-content {
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 2em;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-  cursor: pointer;
-  display: table;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left:0;
-  width: 100%;
-  opacity: 0;
-  -webkit-transition: opacity 500ms;
-  -moz-transition: opacity 500ms;
-  -o-transition: opacity 500ms;
-  transition: opacity 500ms;
-}
