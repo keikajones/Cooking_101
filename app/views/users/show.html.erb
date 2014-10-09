@@ -26,18 +26,20 @@
 	<div class="profile_sections">
 		<section class="user_posts">
 			<h3><%= @user.fname %>'s Posts</h3>
-			<p>Write a New Post:</p>
-			<%= form_for @post do |f| %>
-				<%=f.text_area :body %><br />
-				<%=f.label :tag %>
-				<%=f.select(:tag, options_for_select([['Salad', 1],['Soup', 2],['Seafood', 3],['Meat/Poultry', 4],['Dessert', 5]])) %><br />
-				<%=f.submit 'Post'%>
-			<% end %>
-			<ol>
+			<p id="new_post">Write a New Post:</p>
+			<div id="profile_post_form">
+				<%= form_for @post do |f| %>
+					<p id="profile_post_body"><%=f.text_area :body %></p><br />
+					<%=f.label :tag %>
+					<%=f.select(:tag, options_for_select([['Salad', 1],['Soup', 2],['Seafood', 3],['Meat/Poultry', 4],['Dessert', 5]])) %><br />
+					<%=f.submit 'Post'%>
+				<% end %>
+			</div>
+			<ul>
 				<% @user.posts.each do |post| %>
 					<li><%= link_to post.body, post %></li>
 				<% end %>
-			</ol>
+			</ul>
 		</section>
 
 		<section class="user_following">

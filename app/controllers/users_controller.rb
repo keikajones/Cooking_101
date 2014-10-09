@@ -47,16 +47,6 @@ class UsersController < ApplicationController
 			flash[:alert] = "Could not create an account."
 			render :new
 		end
-
-		@post = Post.new(params[:post_id])
-		#@post.user = User.find(session[:user_id])
-		if @post.save
-			flash[:notice] = "New post!"
-			redirect_to @post
-		else
-			flash[:notice] = "Could not create post"
-			render :new
-		end
 	end
 
 	def edit
@@ -85,6 +75,10 @@ class UsersController < ApplicationController
 	private
 	def user_params
 		params.require(:user).permit(:fname, :lname, :email, :password)
+	end
+
+	def post_params
+		params.require(:post).permit(:body, :tag).merge(user_id: current_user.id)
 	end
 
 	def set_user

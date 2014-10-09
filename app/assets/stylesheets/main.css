@@ -18,6 +18,14 @@ nav a:hover {
 	color: grey;
 }
 
+li{
+	list-style: none;
+}
+
+li a{
+	text-decoration: none;
+}
+
 /***********************************************************/
 /********************* PROFILE PAGE ************************/
 /***********************************************************/
@@ -51,7 +59,6 @@ nav a:hover {
 }
 
 .profile_nav ul li{
-	list-style: none;
 	display: inline-block;
 	margin-left: 100px;
 }
@@ -65,6 +72,19 @@ nav a:hover {
 
 }
 
+#new_post{
+	font-size: 14px;
+	margin-bottom: 2px;
+}
+
+#profile_post_form{
+	width: 500px;
+}
+
+#profile_post_body{
+	width: 500px;
+}
+
 .user_following{
 	display: none;
 }
@@ -74,12 +94,12 @@ nav a:hover {
 }
 
 .profile_sections{
-	height: 250px;
+	height: auto;
 	margin-left: 20px;
 }
 
 .profile_footer{
-
+	margin-top: 50px;
 }
 
 
