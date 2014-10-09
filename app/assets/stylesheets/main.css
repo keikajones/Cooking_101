@@ -113,11 +113,12 @@ li a{
 
 #profile_form_hr{
 	width: 100%;
+	margin-top: 20px;
 	margin-left: -10px;
 }
 
 .profile_post_title, .profile_post_body{
-	width: 80%;
+	width: 90%;
 }
 
 .profile_post_title{
@@ -127,6 +128,11 @@ li a{
 
 .profile_post_body{
 	font-size: 14px;
+}
+
+.profile_post_tag{
+	font-size: 13px;
+	margin-top: 10px;
 }
 
 #post_divider_hr{
@@ -148,9 +154,6 @@ li a{
 	margin-left: 20px;
 }
 
-.profile_footer{
-	margin-top: 50px;
-}
 
 
 

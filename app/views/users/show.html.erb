@@ -11,6 +11,19 @@
 		<div class="profile_bio">
 			<h1>Chef <%= @user.fname + " " + @user.lname %></h1>
 			<p class="chef_level">Level: <%= @user.level %></p>
+			<br /><br />
+			<p>
+				<% if current_user and @user == current_user %>
+					<%= link_to 'Edit Profile', edit_user_path(@user) %>
+				<% end %>
+			</p>
+			<% if current_user and @user != current_user %>
+				<% if current_user.followeds.include? @user %>
+					<p><%= link_to 'Unfollow', unfollow_user_path(@user), method: :post %></p>
+				<% else %>
+					<p><%= link_to 'Follow', follow_user_path(@user),method: :post %></p>
+				<% end %>
+			<% end %>
 		</div>
 	</header>
 
@@ -29,8 +42,8 @@
 			<div class="upper_posts_section">
 				<h3><%= @user.fname %>'s Posts</h3>
 				<% if current_user and @user == current_user %>
-				<p id="new_post">Write a New Post:</p>
-				<div id="profile_post_form">
+					<p id="new_post">Write a New Post:</p>
+					<div id="profile_post_form">
 					<%= form_for @post do |f| %>
 						<%=f.label :title, :class => "profile_label" %>
 						<%=f.text_field :title , :id => "profile_title_text" %><br />
@@ -40,7 +53,6 @@
 						<%=f.select(:tag, options_for_select([['Choose One', 0],['Salad', 1],['Soup', 2],['Seafood', 3],['Meat/Poultry', 4],['Dessert', 5]])) %><br />
 						<%=f.submit 'Post', :id => "profile_postBtn" %>
 					<% end %>
-				<% else %>
 				<% end %>
 				</div>
 			</div>
@@ -75,21 +87,6 @@
 			</ul>
 		</section>
 	</div>
-
-	<% if current_user and @user != current_user %>
-		<% if current_user.followeds.include? @user %>
-			<p><%= link_to 'unfollow', unfollow_user_path(@user), method: :post %></p>
-		<% else %>
-			<p><%= link_to 'follow', follow_user_path(@user),method: :post %></p>
-		<% end %>
-	<% end %>
-
-	<footer class="profile_footer">
-		<p>
-			<%= link_to 'edit user', edit_user_path(@user) %> | 
-			<%= link_to 'back to users', users_path %>
-		</p>
-	</footer>
 
 </body>
 
