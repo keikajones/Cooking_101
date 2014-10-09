@@ -1,0 +1,90 @@
+* {
+	width:100%;
+	margin:0 auto;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800);
+
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	text-align: right;
+}
+
+ul.img-list {
+  list-style-type: none;
+  text-align: center;
+}
+ 
+ul.img-list li {
+  display: inline-block;
+/*  height: 150px;*/
+  margin: 0 1em 1em 0;
+  position: relative;
+  width: 100%;
+}
+
+
+.text-content {
+  background: rgba(0,0,0,0.6);
+  font-size: 2em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+}
+ 
+.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.text-content {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 2em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+  cursor: pointer;
+  display: table;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  opacity: 0;
+}
+ 
+ul.img-list li:hover span.text-content {
+  opacity: 1;
+}
+
+.text-content {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 2em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+  cursor: pointer;
+  display: table;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
