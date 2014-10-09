@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 		#@post.user = User.find(session[:user_id])
 		if @post.save
 			flash[:notice] = "New post!"
-			redirect_to @post
+			redirect_to current_user
 		else
 			flash[:notice] = "Could not create post"
 			render :new

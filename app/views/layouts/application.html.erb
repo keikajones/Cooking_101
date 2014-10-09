@@ -11,7 +11,7 @@
 	<header>
 		<nav>
 		<% if current_user %>
-			<%= "Hello #{current_user.fname}" %> | 
+			Hello, <%= link_to "#{current_user.fname}", current_user %> | 
 			<%= link_to "logout", logout_path, method: :delete %> 
 		<% else %>
 			<%= link_to "Sign Up", new_user_path %> |

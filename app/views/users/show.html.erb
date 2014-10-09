@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<%= stylesheet_link_tag "main.css" %>
+	<%= stylesheet_link_tag "normalize.css" %>
 </head>
 
 <body>
@@ -25,19 +26,33 @@
 	
 	<div class="profile_sections">
 		<section class="user_posts">
-			<h3><%= @user.fname %>'s Posts</h3>
-			<p id="new_post">Write a New Post:</p>
-			<div id="profile_post_form">
-				<%= form_for @post do |f| %>
-					<p id="profile_post_body"><%=f.text_area :body %></p><br />
-					<%=f.label :tag %>
-					<%=f.select(:tag, options_for_select([['Salad', 1],['Soup', 2],['Seafood', 3],['Meat/Poultry', 4],['Dessert', 5]])) %><br />
-					<%=f.submit 'Post'%>
+			<div class="upper_posts_section">
+				<h3><%= @user.fname %>'s Posts</h3>
+				<% if current_user and @user == current_user %>
+				<p id="new_post">Write a New Post:</p>
+				<div id="profile_post_form">
+					<%= form_for @post do |f| %>
+						<%=f.label :title, :class => "profile_label" %>
+						<%=f.text_field :title , :id => "profile_title_text" %><br />
+						<%=f.label :body, :class => "profile_label" %><br />
+						<%=f.text_area :body, :id => "profile_body_text" %><br />
+						<%=f.label :tag, :class => "profile_label" %>
+						<%=f.select(:tag, options_for_select([['Choose One', 0],['Salad', 1],['Soup', 2],['Seafood', 3],['Meat/Poultry', 4],['Dessert', 5]])) %><br />
+						<%=f.submit 'Post', :id => "profile_postBtn" %>
+					<% end %>
+				<% else %>
 				<% end %>
+				</div>
 			</div>
+			<hr id="profile_form_hr" />
 			<ul>
 				<% @user.posts.each do |post| %>
-					<li><%= link_to post.body, post %></li>
+					<li class="profile_post_title"><%= link_to post.title, post %></li>
+					<li class="profile_post_body"><%= link_to post.body, post %></li>
+					<li class="profile_post_tag">
+						#<%= link_to post.display_tag, homepage_salads_path %>
+					</li>
+					<hr id="post_divider_hr"/>
 				<% end %>
 			</ul>
 		</section>
