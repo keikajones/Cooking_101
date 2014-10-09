@@ -2,50 +2,40 @@
 
 <%= stylesheet_link_tag "homepage.css" %>
 
-<ul class="img-list">
+<ul>
 	<li>
-	<a href="#">
-	<img src="images/dessert_tomato-cake-750x350.jpg">
-	<span class="text-content">
-	<span>Desserts</span>
-	</span>
-	</a>
+	<div class="food-images">
+	<img class="food"src="../images/dessert_tomato-cake-750x350.jpg">
+	<%= link_to 'Desserts', homepage_desserts_path, :class => "text_over" %>
+	</div>
 	</li>
 
 	<li>
-	<a href="#">
-	<img src="images/soup_thai-coconut-750x350.jpg">
-	<span class="text-content">
-	<span>Soups</span>
-	</span>
-	</a>
+	<div class="food-images">
+	<img class="food" src="../images/soup_thai-coconut-750x350.jpg">
+	<%= link_to 'Soups', homepage_soups_path, :class => "text_over" %>
+	</div>
 	</li>
 
 	<li>
-	<a href="#">
-	<img src="images/salad_kale-750x350.jpg">
-	<span class="text-content">
-	<span>Salads</span>
-	</span>
-	</a>
+	<div class="food-images">
+	<img class="food" src="../images/salad_kale-750x350.jpg">
+	<%= link_to 'Salads', homepage_salads_path, :class => "text_over" %>
+	</div>
 	</li>
 
 	<li>
-	<a href="#">
-	<img src="images/meat_chicken-750x350.jpg">
-	<span class="text-content">
-	<span>Meat/Poultry</span>
-	</span>
-	</a>
+	<div class="food-images">
+	<img class="food" src="../images/meat_chicken-750x350.jpg">
+	<%= link_to 'Meat', homepage_meat_path, :class => "text_over" %>
+	</div>
 	</li>
 
 	<li>
-	<a href="#">
-	<img src="images/seafood_cod-750x350.jpg">
-	<span class="text-content">
-	<span>Seafood</span>
-	</span>
-	</a>
+	<div class="food-images">
+	<img class="food" src="../images/seafood_cod-750x350.jpg">
+	<%= link_to 'Seafood', homepage_seafood_path, :class => "text_over" %>
+	</div>
 	</li>
 
 </ul>
