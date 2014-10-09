@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 			render :new
 		end
 
-		@post = Post.new(post_params)
+		@post = Post.new(params[:post_id])
 		#@post.user = User.find(session[:user_id])
 		if @post.save
 			flash[:notice] = "New post!"
