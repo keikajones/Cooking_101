@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+	<head>
+		<%= stylesheet_link_tag "demo.css" %>
+		<%= stylesheet_link_tag "component.css" %>
+		<%= javascript_include_tag 'modernizr.custom' %>
+	</head>
+	<body>
+		<div class="container">
+			<header class="clearfix">
+				<h1>Cooking 101</h1>
+				<nav>
+				</nav>
+			</header>	
+			<div id="cbp-so-scroller" class="cbp-so-scroller">
+
+				<section class="cbp-so-section">
+					<article class="cbp-so-side cbp-so-side-left">
+						<h2>Missing an ingredient?</h2>
+						<p>Fruitcake toffee jujubes. Topping biscuit sesame snaps jelly caramels jujubes tiramisu fruitcake. Marzipan tart lemon drops chocolate sesame snaps jelly beans.</p>
+					</article>
+					<figure class="cbp-so-side cbp-so-side-right">
+						<img src="images/cooking_1.jpg" alt="img01">
+					</figure>
+				</section>
+				<section class="cbp-so-section">
+					<figure class="cbp-so-side cbp-so-side-left">
+						<img src="images/soup_chicken-rice.jpg" alt="img01">
+					</figure>
+					<article class="cbp-so-side cbp-so-side-right">
+						<h2>Cook up a storm with Cooking 101!</h2>
+						<p>Lollipop powder danish sugar plum caramels liquorice sweet cookie. Gummi bears caramels gummi bears candy canes cheesecake sweet roll icing dragée. Gummies jelly-o tart. Cheesecake unerdwear.com candy canes apple pie halvah chocolate tiramisu.</p>
+					</article>
+				</section>
+				<section class="cbp-so-section">
+					<article class="cbp-so-side cbp-so-side-left">
+						<h2>Variety is the spice of life</h2>
+						<p>Soufflé bonbon jelly cotton candy liquorice dessert jelly bear claw candy canes. Pudding halvah bonbon marzipan powder. Marzipan gingerbread sweet jelly.</p>
+					</article>
+					<figure class="cbp-so-side cbp-so-side-right">
+						<img src="images/meat_lamb.jpg" alt="img01">
+					</figure>
+				</section>
+				<section class="cbp-so-section">
+					<figure class="cbp-so-side cbp-so-side-left">
+						<img src="images/salad_cucumber.jpg" alt="img01">
+					</figure>
+					<article class="cbp-so-side cbp-so-side-right">
+						<h2>Learn from the cream of the crop!</h2>
+						<p>Sesame snaps sweet wafer danish. Chupa chups carrot cake icing donut halvah bonbon. Chocolate cake candy marshmallow pudding dessert marzipan jujubes sugar plum.</p>
+					</article>
+				</section>
+				<section class="cbp-so-section">
+					<article class="cbp-so-side cbp-so-side-left">
+						<h2>The world is your oyster!</h2>
+						<p>Chupa chups pudding lollipop gummi bears gummies cupcake pie. Cookie cotton candy caramels. Oat cake dessert applicake. Sweet roll tiramisu sweet roll sweet roll.</p>
+					</article>
+					<figure class="cbp-so-side cbp-so-side-right">
+						<img src="images/seafood_oyster.jpg" alt="img01">
+					</figure>
+				</section>
+				<section class="cbp-so-section">
+					<figure class="cbp-so-side cbp-so-side-left">
+						<img src="images/dessert_muffins.jpg" alt="img01">
+					</figure>
+					<article class="cbp-so-side cbp-so-side-right">
+						<h2>Have your cake and eat it!</h2>
+						<p>Cake cotton candy lollipop. Cake croissant cheesecake candy sugar plum icing apple pie wafer. Pie sugar plum tiramisu tiramisu pie fruitcake candy icing. Candy icing gummies gummies cheesecake brownie lemon drops chocolate gingerbread.</p>
+					</article>
+				</section>
+			</div>
+		</div>
+		<%= javascript_include_tag 'classie.js' %>
+		<%= javascript_include_tag 'cbpScroller' %>
+
+		<script>
+			new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
+		</script>
+	</body>
+</html>

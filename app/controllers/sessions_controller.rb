@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 		if @user && @user.password == params[:password]
 			session[:user_id] = @user.id
 			flash[:notice] = "You've successfully logged in."
-			redirect_to @user
+			redirect_to homepage_path
 		else
 			flash[:alert] = "There was a problem logging you in. Please try again or create an account."
 			render :new

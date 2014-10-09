@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   delete '/logout', to: 'sessions#destroy'
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+    get 'homepage' => 'homepage#index'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

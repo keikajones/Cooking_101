@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id
-			flash[:notice] = "You created an account. Welcome to NYCDA Blog!"
+			flash[:notice] = "You created an account. Welcome to Cooking 101!"
 			redirect_to @user
 		else
 			flash[:alert] = "Could not create an account."
