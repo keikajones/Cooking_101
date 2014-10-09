@@ -1,8 +1,8 @@
 <h1>Write a Comment</h1>
 
-<%= form_for ([@post, @comment]) do |f| %>
-	<%= f.text_area :body %><br />
-	<%= f.submit %>
-<% end %>
+<%= render 'form' %>
+
+<%= link_to 'Cancel', post_path(@comment.post) %>
+
 
 
