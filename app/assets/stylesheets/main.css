@@ -11,3 +11,25 @@ nav a {
 nav a:hover {
 	color: grey;
 }
+
+/***********************************************************/
+/********************* PROFILE PAGE ************************/
+/***********************************************************/
+
+.profile_header{
+	width: 100%;
+}
+
+#profile_img{
+	max-height: 200px;
+	max-width: 200px;
+	border-radius: 10px;
+	margin-left: 20px;
+	float: left;
+}
+
+.profile_bio{
+	float: left;
+	display: inline-block;
+	position: relative;
+}

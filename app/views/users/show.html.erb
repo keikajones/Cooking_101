@@ -1,5 +1,17 @@
-<h1><%= @user.fname %>'s Profile</h1>
-<p>Welcome to my profile!</p>
+<!DOCTYPE html>
+<head>
+	<%= stylesheet_link_tag "main.css" %>
+</head>
+
+<header class="profile_header">
+	<img id="profile_img" src="/images/profile_pic.png" alt="profile_pic"/>
+	<div class="profile_bio">
+		<h1>Chef <%= @user.fname + " " + @user.lname %></h1>
+		<p class="chef_level"></p>
+	</div>
+</header>
+
+<section>
 
 <h3><%= @user.fname %>'s Posts</h3>
 <ol>
@@ -7,6 +19,8 @@
 	<li><%= link_to post.body, post %></li>
 <% end %>
 </ol>
+
+</section>
 
 
 <h3>Following</h3>
