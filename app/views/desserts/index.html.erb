@@ -1,0 +1,22 @@
+<h1>Desserts</h1>
+<head>
+	<%= stylesheet_link_tag "main.css" %>
+	<%= stylesheet_link_tag "normalize.css" %>
+</head>
+
+
+		<ul>
+				<% @posts.each do |post| %>
+					<% if post.tag == "5" %>
+					<li class="profile_post_title"><%= link_to post.title, post %></li>
+					<li class="profile_post_body"><%= link_to post.body, post %></li>
+					<li class="edit_post_link">
+						<% if current_user and @user == current_user %>
+							<%= link_to 'Edit Post', edit_post_path %> |
+						<% end %>
+					</li>
+					<hr id="post_divider_hr"/>
+					<% end %>
+				<% end %>
+			
+		</ul>
