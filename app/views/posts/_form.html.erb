@@ -1,7 +1,0 @@
-<%= form_for @post do |f| %>
-	<%=f.text_area :body %>
-	<br />
-	<%=f.label :tag %>
-	<%=f.select(:tag, options_for_select([['Salad', 1],['Soup', 2],['Seafood', 3],['Meat/Poultry', 4],['Dessert', 5]])) %>
-	<%=f.submit %>
-<% end %>
