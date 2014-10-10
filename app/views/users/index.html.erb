@@ -1,9 +1,0 @@
-<h1>Cooking 101</h1>
-<p>Find your friends!</p>
-
-<ol>
-<% @users.each do |user| %>
-<li><%= link_to user.fname, user_path(user.id) %> |
-<%=link_to 'delete', user, method: :delete, data: {confirm: "Are you sure?"} %></li>
-<% end %>
-</ol>
