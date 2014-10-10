@@ -12,4 +12,9 @@ class ApplicationController < ActionController::Base
 		tags[self.tag.to_i]
 	end
 
+	def display_level
+		levels = [' ', 'Line Cook', 'Sous Chef', 'Executive Chef']
+		levels[self.level.to_i]
+	end
+
 end

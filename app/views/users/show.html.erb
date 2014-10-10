@@ -10,7 +10,7 @@
 		<img id="profile_img" src="<%= @user.photo %>" alt="profile_pic"/>
 		<div class="profile_bio">
 			<h1 id="chef_name">Chef <%= @user.fname + " " + @user.lname %></h1>
-			<p class="chef_level">Level: <%= @user.level %></p>
+			<p class="chef_level">Level: <%= @user.display_level %></p>
 			<br /><br />
 			<p>
 				<% if current_user and @user == current_user %>
@@ -66,7 +66,7 @@
 					</li>
 					<li class="edit_post_link">
 						<% if current_user and @user == current_user %>
-							<%= link_to 'Edit Post', edit_post_path %> |
+							<%= link_to 'Edit Post', edit_post_path(post) %> |
 						<% end %>
 						<%= link_to 'Comments', post_path %>
 					</li>

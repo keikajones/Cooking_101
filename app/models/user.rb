@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
 	has_many :followers, through: :reverse_relationships, source: :follower
 	has_many :comments
 	validates_presence_of :fname, :lname, :email, :password
+
+	def display_level
+		levels = [' ', 'Line Cook', 'Sous Chef', 'Executive Chef']
+		levels[self.level.to_i]
+	end
 end

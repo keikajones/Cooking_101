@@ -6,11 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User1 = User.create(fname: "Keika", lname: "Jones", email: "keika.jones@gmail.com", password: "keika", level: "Sous Chef", photo: "https://scontent-b-lga.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/1385715_10203194664532601_2714359376791136339_n.jpg?oh=cda81c9ce2b5363d18e31fd5b9bb568a&oe=54F4F648")
-User2 = User.create(fname: "Darlene", lname: "Portades", email: "darlene.portades@gmail.com", password: "darlene", level: "Line Cook", photo: "http://www.frenchiefever.com/wordpress/wp-content/uploads/2011/08/french_bulldog-breed.jpg")
-User3 = User.create(fname: "Jamie", lname: "Christian", email: "jamie.christian@gmail.com", password: "jamie", level: "Line Cook", photo: "https://scontent-b-lga.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10624892_10203194655172367_8955374368142086491_n.jpg?oh=f0c277ec9a66431d3f1a68eba7abb97c&oe=54BBDB64")
-User4 = User.create(fname: "Brian", lname: "Fountain", email: "brian.fountain@gmail.com", password: "brian", level: "Executive Chef", photo: "http://nycda.com/wp-content/uploads/2014/01/brianfountain.png")
-User5 = User.create(fname: "Zach", lname: "Feldman", email: "zach.feldman@gmail.com", password: "zach", level: "Sous Chef", photo: "http://nycda.com/wp-content/uploads/2014/06/Photo-Jun-19-2-17-36-PM.png")
+User1 = User.create(fname: "Keika", lname: "Jones", email: "keika.jones@gmail.com", password: "keika", level: 2, photo: "https://scontent-b-lga.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/1385715_10203194664532601_2714359376791136339_n.jpg?oh=cda81c9ce2b5363d18e31fd5b9bb568a&oe=54F4F648")
+User2 = User.create(fname: "Darlene", lname: "Portades", email: "darlene.portades@gmail.com", password: "darlene", level: 1, photo: "http://www.frenchiefever.com/wordpress/wp-content/uploads/2011/08/french_bulldog-breed.jpg")
+User3 = User.create(fname: "Jamie", lname: "Christian", email: "jamie.christian@gmail.com", password: "jamie", level: 1, photo: "https://scontent-b-lga.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10624892_10203194655172367_8955374368142086491_n.jpg?oh=f0c277ec9a66431d3f1a68eba7abb97c&oe=54BBDB64")
+User4 = User.create(fname: "Brian", lname: "Fountain", email: "brian.fountain@gmail.com", password: "brian", level: 3, photo: "http://nycda.com/wp-content/uploads/2014/01/brianfountain.png")
+User5 = User.create(fname: "Zach", lname: "Feldman", email: "zach.feldman@gmail.com", password: "zach", level: 2, photo: "http://nycda.com/wp-content/uploads/2014/06/Photo-Jun-19-2-17-36-PM.png")
 
 Post1 = Post.create(title: "Nuts for Salads", body: "Hey, so I'm making a simple beet and spinach salad and thought it would be a great idea to add some sort of nuts to the mix. What kind of nut would you guys recommend?", tag: 1, user_id: 1)
 Post2 = Post.create(title: "Pureeing Soup", body: "What's the easiest way to create a really smooth vegetable puree soup, without a fancy pureeing machine?", tag: 2, user_id: 2)

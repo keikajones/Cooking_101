@@ -1,17 +1,22 @@
 class CommentsController < ApplicationController
-	before_action :set_comment, only: [:edit, :update, :destroy]
+	before_action :set_comment, only: [:show, :edit, :update, :destroy]
+
+	def index
+		@comments = Comments.all	
+	end
+
+	def show
+	end
 
 	def new
 		@comment = Comment.new
-		@post = Post.find(params[:post_id])
 	end
 
 	def create
-		@user = User.find(session[:user_id])
 		@post = Post.find(params[:post_id]) 
 		@post.user = User.find(session[:user_id])
-		@comment = Comment.new(comment_params)
 		@comment.post = Post.find(params[:post_id])
+		@comment = Comment.new(comment_params)
 		if @comment.save
 			flash[:notice] = "Thank you for your comment"
 			redirect_to post_path(@post)
@@ -46,7 +51,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:body)
+		params.require(:comment).permit(:body).merge(user_id: current_user.id)
 	end
 
 	def set_comment
