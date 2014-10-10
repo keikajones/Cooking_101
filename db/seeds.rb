@@ -20,7 +20,7 @@ Post5 = Post.create(title: "Souffle", body: "Everytime I try to make a souffle, 
 
 Comment1 = Comment.create(body: "Try walnuts! Toast them with a bit of honey to add another layer of flavor too!", post_id: 1, user_id: 2)
 Comment2 = Comment.create(body: "After pureeing the vegetable with a vegetable broth in a regular blender, strain it through a cheesecloth to get all the lumps out.", post_id: 2, user_id: 4)
-Comment3 = Comment.create(body: "I agree with the above comment, but also you can save the lumps and mix it with a spicy paste like the korean red pepper paste for example, and create a great sauce that can be used many different ways!", post_id: 2, user_id: 1)
+Comment3 = Comment.create(body: "I agree with Brian's comment, but also you can save the lumps and mix it with a spicy paste like the korean red pepper paste for example, and create a great sauce that can be used many different ways!", post_id: 2, user_id: 1)
 Comment4 = Comment.create(body: "If the mackerel is really fresh it shouldn't have as strong of a smell.", post_id: 3, user_id: 1)
 Comment5 = Comment.create(body: "Ask the fish monger when the batch came in. Only buy if they say it came in that morning!", post_id: 3, user_id: 5)
 Comment6 = Comment.create(body: "The pork shoulder and pork butt are the most tender parts.", post_id: 4, user_id: 2)

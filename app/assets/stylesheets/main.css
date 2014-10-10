@@ -4,6 +4,11 @@
 	font-family: 'Open Sans';
 }
 
+a{
+	text-decoration: none;
+	color: #000;
+}
+
 nav {
 	text-align:right;
 	color:#000;
@@ -43,6 +48,10 @@ li a{
 	float: left;
 }
 
+#chef_name{
+	margin-top: 5px;
+}
+
 .profile_bio{
 	float: left;
 	display: inline-block;
@@ -72,7 +81,7 @@ li a{
 
 }
 
-#upper_posts_section{
+.upper_posts_section{
 	margin-left: 20px;
 }
 
@@ -114,7 +123,7 @@ li a{
 #profile_form_hr{
 	width: 100%;
 	margin-top: 20px;
-	margin-left: -10px;
+	margin-left: -20px;
 }
 
 .profile_post_title, .profile_post_body{
@@ -133,12 +142,23 @@ li a{
 .profile_post_tag{
 	font-size: 13px;
 	margin-top: 10px;
+	display: inline-block;
+}
+
+.edit_post_link{
+	display: inline-block;
+	margin-left: 75%;
+	font-size: 13px;
 }
 
 #post_divider_hr{
 	width: 100%;
 	margin-left: -30px;
 	margin-top: 20px;
+}
+
+.follow_heading{
+	margin-left: 20px;
 }
 
 .user_following{
@@ -153,6 +173,119 @@ li a{
 	height: auto;
 	margin-left: 20px;
 }
+
+
+/**************************************************************/
+/********************** EDIT POST PAGE ************************/
+/**************************************************************/
+
+#edit_post_title{
+	margin-left: 40px;
+	margin-bottom: 50px;
+	font-size: 40px;
+}
+
+.edit_post{
+	margin-left: 40px;
+}
+
+
+.edit_profile_label{
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+.edit_cancel_link{
+	margin-left: 40px;
+}
+
+
+
+/**************************************************************/
+/********************** SHOW POST PAGE ************************/
+/**************************************************************/
+
+.post_title_header{
+	font-size: 60px;
+	margin-bottom: 0;
+	margin-left: 40px;
+	margin-top: 15px;
+	display: inline-block;
+}
+
+#post_author{
+	font-size: 40px;
+	display: inline-block;
+	margin-left: 50px;
+}
+
+.post_body_header{
+	font-size: 35px;
+	margin-top: 20px;
+	margin-left: 40px;
+	margin-bottom: 10px;
+}
+
+.post_tag_header{
+	margin-left: 40px;
+	margin-top: 0;
+}
+
+#add_comment_text{
+	margin-left: 40px;
+}
+
+.new_comment{
+	margin-left: 40px;
+}
+
+#comment_box{
+	width: 700px;
+	height: 60px;
+	font-size: 14px;
+}
+
+#comment_box:focus{
+	outline: none;
+}
+
+.comments_section{
+	margin-left: 40px;
+	margin-top: 40px;
+	margin-right: 40px;
+}
+
+#comments_list{
+	padding-left: 0;
+}
+
+#comment_author{
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+#comment_divider_hr{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
+/**************************************************************/
+/********************* EDIT COMMENT PAGE **********************/
+/**************************************************************/
+
+.edit_comment_wrap{
+	margin-left: 40px;
+}
+
+#edit_comment_title{
+	font-size: 40px;
+	margin-bottom: 50px;
+}
+
+
+
+
 
 
 

@@ -6,4 +6,5 @@ class Post < ActiveRecord::Base
 		tags = [' ','Salad', 'Soup', 'Seafood', 'Meat/Poultry', 'Dessert']
 		tags[self.tag.to_i]
 	end
+
 end

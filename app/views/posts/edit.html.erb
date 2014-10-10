@@ -1,5 +1,14 @@
-<h1>Edit your post</h1>
+<h1 id="edit_post_title">Edit your post</h1>
 
-<%= render 'form' %>
+<%= form_for @post do |f| %>
+	<%=f.label :title, :class => "edit_profile_label" %>
+	<%=f.text_field :title , :id => "profile_title_text" %><br />
+	<%=f.label :body, :class => "edit_profile_label" %><br />
+	<%=f.text_area :body, :id => "profile_body_text" %><br />
+	<%=f.label :tag, :class => "edit_profile_label" %>
+	<%=f.select(:tag, options_for_select([['Choose One', 0],['Salad', 1],['Soup', 2],['Seafood', 3],['Meat/Poultry', 4],['Dessert', 5]])) %><br />
+	<%=f.submit 'Post', :id => "profile_postBtn" %>
+<% end %>
 
-<%= link_to 'cancel', posts_path %>
+<br/>
+<p class="edit_cancel_link"><%= link_to 'Cancel', post_path %> | <%= link_to 'Delete', post_path, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %></p>

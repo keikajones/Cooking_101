@@ -9,7 +9,7 @@
 	<header class="profile_header">
 		<img id="profile_img" src="/images/profile_pic.png" alt="profile_pic"/>
 		<div class="profile_bio">
-			<h1>Chef <%= @user.fname + " " + @user.lname %></h1>
+			<h1 id="chef_name">Chef <%= @user.fname + " " + @user.lname %></h1>
 			<p class="chef_level">Level: <%= @user.level %></p>
 			<br /><br />
 			<p>
@@ -52,17 +52,23 @@
 						<%=f.label :tag, :class => "profile_label" %>
 						<%=f.select(:tag, options_for_select([['Choose One', 0],['Salad', 1],['Soup', 2],['Seafood', 3],['Meat/Poultry', 4],['Dessert', 5]])) %><br />
 						<%=f.submit 'Post', :id => "profile_postBtn" %>
+						<hr id="profile_form_hr" />
 					<% end %>
 				<% end %>
 				</div>
 			</div>
-			<hr id="profile_form_hr" />
-			<ul>
+			<ul class="user_posts_list">
 				<% @user.posts.each do |post| %>
 					<li class="profile_post_title"><%= link_to post.title, post %></li>
 					<li class="profile_post_body"><%= link_to post.body, post %></li>
 					<li class="profile_post_tag">
 						#<%= link_to post.display_tag, homepage_salads_path %>
+					</li>
+					<li class="edit_post_link">
+						<% if current_user and @user == current_user %>
+							<%= link_to 'Edit Post', edit_post_path %> |
+						<% end %>
+						<%= link_to 'Comments', post_path %>
 					</li>
 					<hr id="post_divider_hr"/>
 				<% end %>
@@ -70,7 +76,7 @@
 		</section>
 
 		<section class="user_following">
-			<h3>Following</h3>
+			<h3 class="follow_heading">Following</h3>
 			<ul>
 				<% @user.followeds.each do |user| %>
 					<li><%= link_to user.fname, user %></li>
@@ -79,7 +85,7 @@
 		</section>
 
 		<section class="user_followers">
-			<h3>Followers</h3>
+			<h3 class="follow_heading">Followers</h3>
 			<ul>
 				<% @user.followers.each do |user| %>
 					<li><%= link_to user.fname, user %></li>
@@ -95,17 +101,20 @@
 $(document).ready(function(){
 	$("#user_posts").click(function(){
 		$(".user_posts").show();
+		$(".user_posts_list").show();
 		$(".user_following").hide();
 		$(".user_followers").hide();
 	});
 	$("#user_following").click(function(){
 		$(".user_following").show();
 		$(".user_posts").hide();
+		$(".user_posts_list").hide();
 		$(".user_followers").hide();
 	});
 	$("#user_followers").click(function(){
 		$(".user_followers").show();
 		$(".user_posts").hide();
+		$(".user_posts_list").hide();
 		$(".user_following").hide();
 	});
 

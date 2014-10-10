@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 
 <body>
+	
+	<h1 class="post_title_header"><%= @post.title %></h1> <h1 id="post_author">BY: <%= link_to @post.user.fname, user_path(@post.user) %></h1>
+	<h2 class="post_body_header"><%= @post.body %></h2>
+	<h3 class="post_tag_header">#<%= link_to @post.display_tag, homepage_salads_path %></h3>
 
-	<h1><%= @post.body %></h1>
+	<p id="add_comment_text"> Add a Comment: </p>
+	
+	<%= form_for ([@post, @comment]) do |f| %>
+		<%= f.text_area :body, :id => "comment_box" %><br />
+		<%= f.submit 'Post'%>
+	<% end %>
 
+	<div class="comments_section">
+		<p> Comments: </p>
 
-	<p> <%= link_to 'Add Comment', new_post_comment_path(@post, @comment) %></p>
-
-
-
-	<p> Comments: </p>
-
-
-	<ul>
-		<% @post.comments.each do |comment| %>
-			<li><%= comment.body %> | <%= link_to 'Edit', edit_post_comment_path(@post, comment) %></li>
-		<% end %>
-	</ul>
+		<ul id="comments_list">
+			<% @post.comments.each do |comment| %>
+				<li><%= comment.body %> <p id="comment_author">by: <%= link_to comment.user.fname, user_path(comment.user) %> 
+				<% if current_user and comment.user == current_user %>
+					| <%= link_to 'Edit Comment', edit_post_comment_path(@post, comment) %></p>
+				<% end %>
+				</li>
+				<hr id="comment_divider_hr"/>
+			<% end %>
+		</ul>
+	</div>
 
 </body>

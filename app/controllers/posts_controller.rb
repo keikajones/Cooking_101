@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		
+		@comment = Comment.new
 	end
 
 	def new
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 	def destroy
 		@post.destroy
 		flash[:notice] = "Post deleted!"
-		redirect_to users_path
+		redirect_to current_user
 	end
 
 	private
