@@ -1,6 +1,6 @@
-<h1>Sign In</h1>
+<h1 id="sign_in_header">Sign In</h1>
 
-<%= form_tag('/sessions', method: :post) do %>
+<%= form_tag('/sessions', method: :post, :class => "sign_in_form") do %>
 	<%= label_tag :email %>
 	<%= email_field_tag :email %><br />
 	<%= label_tag :password %>
