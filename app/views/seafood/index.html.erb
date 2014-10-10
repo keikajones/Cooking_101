@@ -1,0 +1,10 @@
+<h1>Seafood</h1>
+
+<ul>
+<% current_user.followeds.each do |user| %>
+	<h2><%= user.fname %></h2>
+	<% user.posts.each do |post| %>
+		<li><%= post.body %></li>
+	<% end %>
+<% end %>
+</ul>
