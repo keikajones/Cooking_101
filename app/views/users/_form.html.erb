@@ -8,7 +8,6 @@
 		</ul>
 	<% end %>
 
-
 	<%= f.label :fname, "First Name", :class => "edit_profile_label" %>
 	<%= f.text_field :fname, :id => "edit_fname", :class => "edit_field" %><br />
 	<%= f.label :lname, "Last Name", :class => "edit_profile_label" %>
@@ -22,5 +21,4 @@
 	<%= f.label :photo, 'Photo URL', :class => "edit_profile_label"%>
 	<%= f.text_field :photo, :id => "edit_photo", :class => "edit_field" %><br />
 	<%= f.submit 'Update' %>
-
 <% end %>

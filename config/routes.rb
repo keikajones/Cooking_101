@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   # Example of regular route:
     get 'homepage' => 'homepage#index'
     get 'desserts' => 'desserts#index'
-    get 'desserts' => 'desserts#show'
     get 'soups' => 'soups#index'
     get 'salads' => 'salads#index'
     get 'meat' => 'meat#index'

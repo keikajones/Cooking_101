@@ -5,7 +5,7 @@ class SaladsController < ApplicationController
 	end
 
 	def show
-		@comment = Comment.new
+		@post = Post.find(params[:id])
 	end
 
 	def new
@@ -13,15 +13,6 @@ class SaladsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
-		#@post.user = User.find(session[:user_id])
-		if @post.save
-			flash[:notice] = "New post!"
-			redirect_to current_user
-		else
-			flash[:notice] = "Could not create post"
-			render :new
-		end
 	end
 
 end
