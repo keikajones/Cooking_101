@@ -151,7 +151,7 @@ li a{
 	font-size: 13px;
 }
 
-#post_divider_hr{
+.post_divider_hr{
 	width: 100%;
 	margin-left: -30px;
 	margin-top: 20px;
@@ -163,6 +163,25 @@ li a{
 
 .user_following{
 	display: none;
+}
+
+.following_list{
+	float: left;
+}
+
+.following_feed{
+	float: left;
+	margin-left: 80px;
+	width: 80%;
+}
+
+#following_post_tag{
+	display: inline-block;
+}
+
+#following_post_author{
+	display: inline-block;
+	margin-left: 700px;
 }
 
 .user_followers{

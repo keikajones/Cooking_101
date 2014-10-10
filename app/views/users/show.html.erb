@@ -68,20 +68,37 @@
 						<% if current_user and @user == current_user %>
 							<%= link_to 'Edit Post', edit_post_path(post) %> |
 						<% end %>
-						<%= link_to 'Comments', post_path %>
+						<%= link_to 'Comments', post_path(post) %>
 					</li>
-					<hr id="post_divider_hr"/>
+					<hr class="post_divider_hr"/>
 				<% end %>
 			</ul>
 		</section>
 
 		<section class="user_following">
-			<h3 class="follow_heading">Following</h3>
-			<ul>
-				<% @user.followeds.each do |user| %>
-					<li><%= link_to user.fname, user %></li>
+			<div class="following_list">
+				<h3 class="follow_heading">Following</h3>
+				<ul>
+					<% @user.followeds.each do |user| %>
+						<li><%= link_to user.fname, user %></li>
+					<% end %>
+				</ul>
+			</div>
+
+			<div class="following_feed">
+				<% if current_user and @user == current_user %>
+					<h3><%= @user.fname %>'s Feed</h3>
+					<ul>
+							<% @posts.each do |post| %>
+								<li class="profile_post_title"><%= link_to post.title, post_path(post) %></li>
+								<li class="profile_post_body"><%= post.body %></li>
+								<li class="profile_post_tag" id="following_post_tag"> #<%= link_to post.display_tag, salads_path %></li>
+								<li class="profile_post_tag" id="following_post_author"> by: <%= link_to post.user.fname, user_path(post.user) %> | <%= link_to 'Comments', post_path(post) %></li>
+								<hr class="post_divider_hr"/>														
+							<% end %>
+					</ul>
 				<% end %>
-			</ul>
+			</div>
 		</section>
 
 		<section class="user_followers">

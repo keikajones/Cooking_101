@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
 	def show
 		@post = Post.new
+		@posts = Post.subscribed current_user.followeds
 	end
 
 	def new
