@@ -7,7 +7,7 @@
 <body>
 
 	<header class="profile_header">
-		<img id="profile_img" src="/images/profile_pic.png" alt="profile_pic"/>
+		<img id="profile_img" src="<%= @user.photo %>" alt="profile_pic"/>
 		<div class="profile_bio">
 			<h1 id="chef_name">Chef <%= @user.fname + " " + @user.lname %></h1>
 			<p class="chef_level">Level: <%= @user.level %></p>
@@ -62,7 +62,7 @@
 					<li class="profile_post_title"><%= link_to post.title, post %></li>
 					<li class="profile_post_body"><%= link_to post.body, post %></li>
 					<li class="profile_post_tag">
-						#<%= link_to post.display_tag, homepage_salads_path %>
+						#<%= link_to post.display_tag, salads_path %>
 					</li>
 					<li class="edit_post_link">
 						<% if current_user and @user == current_user %>

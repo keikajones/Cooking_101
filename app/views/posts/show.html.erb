@@ -4,7 +4,7 @@
 	
 	<h1 class="post_title_header"><%= @post.title %></h1> <h1 id="post_author">BY: <%= link_to @post.user.fname, user_path(@post.user) %></h1>
 	<h2 class="post_body_header"><%= @post.body %></h2>
-	<h3 class="post_tag_header">#<%= link_to @post.display_tag, homepage_salads_path %></h3>
+	<h3 class="post_tag_header">#<%= link_to @post.display_tag, salads_path %></h3>
 
 	<p id="add_comment_text"> Add a Comment: </p>
 	

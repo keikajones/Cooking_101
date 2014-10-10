@@ -4,6 +4,7 @@
 	<%= stylesheet_link_tag "normalize.css" %>
 </head>
 
+<body>
 
 		<ul>
 				<% @posts.each do |post| %>
@@ -15,8 +16,10 @@
 							<%= link_to 'Edit Post', edit_post_path %> |
 						<% end %>
 					</li>
+					<li><%= link_to 'Comments', post_path(post) %></li>
 					<hr id="post_divider_hr"/>
 					<% end %>
 				<% end %>
-			
 		</ul>
+
+</body>
