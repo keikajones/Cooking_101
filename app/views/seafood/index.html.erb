@@ -1,10 +1,25 @@
 <h1>Seafood</h1>
+<head>
+	<%= stylesheet_link_tag "main.css" %>
+	<%= stylesheet_link_tag "normalize.css" %>
+</head>
 
-<ul>
-<% current_user.followeds.each do |user| %>
-	<h2><%= user.fname %></h2>
-	<% user.posts.each do |post| %>
-		<li><%= post.body %></li>
-	<% end %>
-<% end %>
-</ul>
+<body>
+
+		<ul>
+				<% @posts.each do |post| %>
+					<% if post.tag == "3" %>
+					<li class="profile_post_title"><%= link_to post.title, post %></li>
+					<li class="profile_post_body"><%= link_to post.body, post %></li>
+					<li class="edit_post_link">
+						<% if current_user and @user == current_user %>
+							<%= link_to 'Edit Post', edit_post_path %> |
+						<% end %>
+					</li>
+					<li><%= link_to 'Comments', post_path(post) %></li>
+					<hr id="post_divider_hr"/>
+					<% end %>
+				<% end %>
+		</ul>
+
+</body>
