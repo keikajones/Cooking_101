@@ -32,15 +32,15 @@ li a{
 	color: #000;
 }
 
+.header{
+	font-size: 40px;
+	margin-left: 40px;
+}
 
 /***********************************************************/
 /********************** SIGNUP PAGE ************************/
 /***********************************************************/
 
-#new_user_header{
-	margin-left: 40px;
-	font-size: 40px;
-}
 
 .new_user{
 	margin-left: 40px;
@@ -51,9 +51,6 @@ li a{
 /********************** SIGNIN PAGE ************************/
 /***********************************************************/
 
-#sign_in_header{
-	margin-left: 40px;
-}
 
 .sign_in_form{
 	margin-left: 40px;
@@ -241,10 +238,6 @@ li a{
 /********************* EDIT PROFILE PAGE **********************/
 /**************************************************************/
 
-#edit_profile_header{
-	margin-left: 40px;
-	font-size: 40px;
-}
 
 .edit_user{
 	margin-left: 40px;
@@ -331,12 +324,20 @@ li a{
 	font-size: 35px;
 	margin-top: 20px;
 	margin-left: 40px;
+	margin-right: 40px;
 	margin-bottom: 10px;
 }
 
 .post_tag_header{
 	margin-left: 40px;
 	margin-top: 0;
+}
+
+#post_edit_link{
+	margin-left: 40px;
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 50px;
 }
 
 #add_comment_text{

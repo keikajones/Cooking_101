@@ -1,7 +1,7 @@
 <body>	
 
 <div class="edit_comment_wrap">
-	<h1 id="edit_comment_title">Edit your Comment</h1>
+	<h1 class="header" id="edit_comment_title">Edit your Comment</h1>
 
 	<%= form_for ([@post, @comment]) do |f| %>
 		<%= f.text_area :body, :id => "comment_box" %><br />

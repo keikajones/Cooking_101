@@ -5,6 +5,11 @@
 	<h1 class="post_title_header"><%= @post.title %></h1> <h1 id="post_author">BY: <%= link_to @post.user.fname, user_path(@post.user) %></h1>
 	<h2 class="post_body_header"><%= @post.body %></h2>
 	<h3 class="post_tag_header">#<%= link_to @post.display_tag, return_post_path(@post) %></h3>
+	<h3 id="post_edit_link">
+		<% if current_user and @post.user == current_user %>
+			<%= link_to 'Edit Post', edit_post_path(@post) %>
+		<% end %>
+	</h3>
 
 	<p id="add_comment_text"> Add a Comment: </p>
 	
