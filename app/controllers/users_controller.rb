@@ -78,6 +78,10 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:fname, :lname, :email, :password, :level, :photo)
 	end
 
+	def post_params
+		params.require(:post).permit(:title, :body, :tag).merge(user_id: current_user.id)
+	end
+
 	def set_user
 		@user = User.find(params[:id])
 	end

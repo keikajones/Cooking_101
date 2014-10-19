@@ -44,7 +44,7 @@
 				<% if current_user and @user == current_user %>
 					<p id="new_post">Write a New Post:</p>
 					<div id="profile_post_form">
-					<%= form_for @post do |f| %>
+					<%= form_for @post, remote: true do |f| %>
 						<%=f.label :title, :class => "profile_label" %>
 						<%=f.text_field :title , :id => "profile_title_text" %><br />
 						<%=f.label :body, :class => "profile_label" %><br />
@@ -58,20 +58,7 @@
 				</div>
 			</div>
 			<ul class="user_posts_list">
-				<% @user.posts.each do |post| %>
-					<li class="profile_post_title"><%= link_to post.title, post %></li>
-					<li class="profile_post_body"><%= link_to post.body, post %></li>
-					<li class="profile_post_tag">
-						#<%= link_to post.display_tag, return_post_path(post) %>
-					</li>
-					<li class="edit_post_link">
-						<% if current_user and @user == current_user %>
-							<%= link_to 'Edit Post', edit_post_path(post) %> |
-						<% end %>
-						<%= link_to 'Comments', post_path(post) %>
-					</li>
-					<hr class="post_divider_hr"/>
-				<% end %>
+				<%= render partial: 'post', collection: @user.posts %>
 			</ul>
 		</section>
 
