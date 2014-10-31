@@ -7,7 +7,8 @@
 <body>
 
 	<header class="profile_header">
-		<img id="profile_img" src="<%= @user.photo %>" alt="profile_pic"/>
+		<%= image_tag @user.photo.url(:medium) %>
+		<!-- <img id="profile_img" src="<%= @user.photo %>" alt="profile_pic"/> -->
 		<div class="profile_bio">
 			<h1 id="chef_name">Chef <%= @user.fname + " " + @user.lname %></h1>
 			<p class="chef_level">Level: <%= @user.display_level %></p>
