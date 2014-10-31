@@ -5,7 +5,7 @@ RSpec.describe UsersController, :type => :controller do
 	let(:user){FactoryGirl.build(:user)}
 	let(:invalid_user){FactoryGirl.build(:invalid_user)}
 	let(:session){FactoryGirl.build(:session)}
-	let(:post){FactoryGirl.build(:post)}
+	# let(:post){FactoryGirl.build(:post)}
 	let(:valid_session) { {user_id: 1}}
 
 	let(:valid_user){
@@ -66,25 +66,9 @@ RSpec.describe UsersController, :type => :controller do
 	describe "POST create" do
 		describe "with valid params" do
 			it "creates a new user" do
-				# expect {
-				# 	post :create, {user: attributes_for(:user)}, attributes_for(:session)
-				# }.to change(User, :count).by(1)
-
-
-				# expect {
-				# 	atts = attributes_for(:user)
-				# 	post :create, {user: atts}, attributes_for(:session)
-				# }.to change(User, :count).by(1)
-
-				atts = attributes_for(:user)
-				debugger
-				post :create, {user: invalid_user}, attributes_for(:session)
-				# expect(User.count).to eq(1)
-				# p attributes_for(:user).inspect
-				# p attributes_for(:session).inspect
-				
-				# p attributes_for(:user).class
-				# p valid_user.class
+				expect {
+					post :create, {user: attributes_for(:user)}, attributes_for(:session)
+				}.to change(User, :count).by(1)
 			end
 
 			it "assigns a newly created user as @user" do
