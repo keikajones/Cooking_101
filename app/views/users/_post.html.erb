@@ -1,0 +1,12 @@
+<li class="profile_post_title"><%= link_to post.title, post %></li>
+<li class="profile_post_body"><%= link_to post.body, post %></li>
+<li class="profile_post_tag">
+	#<%= link_to post.display_tag, return_post_path(post) %>
+</li>
+<li class="edit_post_link">
+	<% if current_user and @user == current_user %>
+		<%= link_to 'Edit Post', edit_post_path(post) %> |
+	<% end %>
+	<%= link_to 'Comments', post_path(post) %>
+</li>
+<hr class="post_divider_hr"/>

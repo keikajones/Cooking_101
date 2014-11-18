@@ -15,10 +15,13 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+		@posts = Post.order('created_at DESC')
 		#@post.user = User.find(session[:user_id])
 		if @post.save
 			flash[:notice] = "New post!"
-			redirect_to current_user
+			respond_to do |format|
+				format.js
+			end
 		else
 			flash[:notice] = "Could not create post"
 			render :new

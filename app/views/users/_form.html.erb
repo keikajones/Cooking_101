@@ -1,4 +1,4 @@
-<%= form_for @user do |f| %>
+<%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
 
 	<% if @user.errors.any? %>
 		<ul>
@@ -18,7 +18,7 @@
 	<%= f.password_field :password, :id => "edit_password", :class => "edit_field" %><br />
 	<%= f.label :level, :class => "edit_profile_label", :id => "edit_level" %>
 	<%= f.select(:level, options_for_select([['Choose One', 0],['Line Cook', 1],['Sous Chef', 2],['Executive Chef', 3]])) %><br />
-	<%= f.label :photo, 'Photo URL', :class => "edit_profile_label"%>
-	<%= f.text_field :photo, :id => "edit_photo", :class => "edit_field" %><br />
+	<%= f.label :photo, 'Update Photo', :class => "edit_profile_label"%>
+	<%= f.file_field :photo, :id => "edit_photo", :class => "edit_field" %><br />
 	<%= f.submit 'Update' %>
 <% end %>
